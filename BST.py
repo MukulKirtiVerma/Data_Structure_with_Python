@@ -186,5 +186,5 @@ x.preorder(x.root)
 x.postorder(x.root)
 x.tree_height(x.root, 0)
 x.BFS(x.root)
-x.delete(x.root,6.5)
+x.delete(x.root,5)
 
