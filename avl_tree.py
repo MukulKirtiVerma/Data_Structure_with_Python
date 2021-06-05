@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 """
+Created on Sat Jun  5 14:55:39 2021
+
+@author: Mukul Kirti Verma
+"""
+# -*- coding: utf-8 -*-
+"""
 Created on Wed Jun  2 14:56:33 2021
 
 @author: Mukul Kirti Verma
@@ -98,6 +104,7 @@ class AVL:
             current.right=self.right_rotate(current.right)
             return self.left_rotate(current)
         return current
+        
             
     def left_rotate(self,z):
         y=z.right
@@ -108,7 +115,6 @@ class AVL:
         z.height=1+max(self.getHeight(z.left),self.getHeight(z.right))
         y.height=1+max(self.getHeight(y.left),self.getHeight(y.right))
         return y
-
         
     def right_rotate(self,z):
         y=z.left
@@ -118,7 +124,7 @@ class AVL:
         z.left=T3
         z.height=1+max(self.getHeight(z.left),self.getHeight(z.right))
         y.height=1+max(self.getHeight(y.left),self.getHeight(y.right))
-        return y      
+        return y     
         
     def getBalance(self,current):
         if current==None:
@@ -132,10 +138,26 @@ class AVL:
         if current==None:
             return 0
         return current.height
+    def inorder(self,current):
+        if(current==None):
+            return
+        self.inorder(current.left)
+        print(current.val)
+        self.inorder(current.right)
     def preorder(self,current):
         if(current==None):
             return
+        print(current.val)
+        self.preorder(current.left)
         self.preorder(current.right)
+    def find_max(self,current):
+        if current.right==None:
+            return current.val
+        return self.find_max(current.right)
+    def find_min(self,current):
+        if current.left==None:
+            return current.val
+        return self.find_max(current.left)
     
         
         
@@ -144,9 +166,12 @@ av.root=av.insert(av.root,3)
 av.root=av.insert(av.root,2)
 av.root=av.insert(av.root,6)
 av.root=av.insert(av.root,8)
+av.inorder(av.root)
 av.preorder(av.root)
-    
-    
-    
+av.find_max(av.root)
+av.find_min(av.root)
 
-
+insertion = o(logn)
+searching= o(logn)
+find max=o(logn)
+find min=o(logn)    
