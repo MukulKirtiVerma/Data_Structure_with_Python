@@ -3,12 +3,7 @@
 Created on Sat Jun  5 14:55:39 2021
 
 @author: Mukul Kirti Verma
-"""
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jun  2 14:56:33 2021
 
-@author: Mukul Kirti Verma
 
 a) Left Left Case 
 
