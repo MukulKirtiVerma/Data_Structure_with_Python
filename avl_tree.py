@@ -165,8 +165,10 @@ av.inorder(av.root)
 av.preorder(av.root)
 av.find_max(av.root)
 av.find_min(av.root)
-
+"""
+time complxity
 insertion = o(logn)
 searching= o(logn)
 find max=o(logn)
 find min=o(logn)    
+"""
