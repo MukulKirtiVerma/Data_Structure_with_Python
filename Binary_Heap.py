@@ -4,7 +4,9 @@ Created on Wed Jun  2 14:56:32 2021
 
 @author: Mukul Kirti Verma
 """
-
+i=1
+l=i*2
+r=i*2+1
 
 
 class heap:
@@ -75,7 +77,26 @@ class heap:
                    break
     
         return mx
-    
+    def dec_key(self, key,data):
+        index=self.arr.index(key)
+        self.arr[index]=data
+        p=index
+        l=p*2
+        r=p*2+1
+        while self.arr[p]<max(self.arr[l],self.arr[r]):
+              mx=r
+              if(self.arr[l]>self.arr[r]):
+                       mx=l
+              self.arr[p],self.arr[mx]=self.arr[mx],self.arr[p]
+              p=mx
+              l=p*2
+              r=p*2+1
+              if(l>=len(self.arr)):
+                     break
+              if(r>=len(self.arr)):
+                       if(self.arr[l]>self.arr[p]):
+                             self.arr[p],self.arr[l]=self.arr[l],self.arr[p]
+                       break 
 h1=heap()
 h1.insert(5)
 h1.insert(6)
@@ -83,6 +104,8 @@ h1.insert(7)
 h1.insert(8)
 h1.find_max()
 h1.extract_max()
+h1.dec_key(8,1)
+h1.arr
 h=heap()
 h.heap_sort([5,3,7,2,8,1,22])
 
